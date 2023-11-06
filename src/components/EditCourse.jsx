@@ -57,10 +57,6 @@ const EditCourse = () => {
     <div>
       {/* Your component JSX */}
       <h2>Editing Course {courseId}</h2>
-      {/* <button onClick={() => {setEdit(true)}}>Edit Title</button>
-      {edit ? <p>course.title</p> : <input type={"text"} onChange={e => setCourse({ ...course, title : e.target.value})} placeholder={`${course.title}`} />}
-        
-        <button onClick={handleEdit}>Edit Course</button> */}
         <p>Title</p>
         <input type={"text"} onChange={e => setCourse({ ...course, title : e.target.value})} placeholder={`${course.title}`}/>
         <p>Description</p>
@@ -73,5 +69,9 @@ const EditCourse = () => {
     </div>
   );
 };
+
+// function CourseCard(props){
+
+// }
 
 export default EditCourse;

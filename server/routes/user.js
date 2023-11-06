@@ -1,8 +1,7 @@
 /* eslint-disable no-undef */
 const express = require('express');
-const { authenticateJwt, signToken } = require("../middleware/auth");
+const { authenticateJwt, SECRET } = require("../middleware/auth");
 const { User, Course } = require("../db");
-// const jwt = require('jsonwebtoken');
 const router = express.Router();
 
   router.post('/signup', async (req, res) => {
@@ -13,7 +12,7 @@ const router = express.Router();
     } else {
       const newUser = new User({ username, password });
       await newUser.save();
-      const token = signToken({ username, role: 'user' });
+      const token = jwt.sign({ username, role: 'user' }, SECRET, { expiresIn: '1h' });
       res.json({ message: 'User created successfully', token });
     }
   });
@@ -22,7 +21,7 @@ const router = express.Router();
     const { username, password } = req.headers;
     const user = await User.findOne({ username, password });
     if (user) {
-      const token = signToken({ username, role: 'user' });
+      const token = jwt.sign({ username, role: 'user' }, SECRET, { expiresIn: '1h' });
       res.json({ message: 'Logged in successfully', token });
     } else {
       res.status(403).json({ message: 'Invalid username or password' });

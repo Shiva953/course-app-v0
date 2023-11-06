@@ -1,8 +1,10 @@
 /* eslint-disable no-undef */
+// const mongoose = require("mongoose");
 const express = require('express');
 const { Course, Admin } = require("../db");
-// const jwt = require('jsonwebtoken');
-const { authenticateJwt, signToken } = require("../middleware/auth");
+const jwt = require('jsonwebtoken');
+const { SECRET } = require("../middleware/auth")
+const { authenticateJwt } = require("../middleware/auth");
 
 const router = express.Router();
 
@@ -27,7 +29,7 @@ router.post('/signup', (req, res) => {
         const newAdmin = new Admin(obj);
         newAdmin.save();
 
-        const token = signToken({ username, role: 'admin' });
+        const token = jwt.sign({ username, role: 'admin' }, SECRET, { expiresIn: '1h' });
         res.json({ message: 'Admin created successfully', token });
       }
   
@@ -39,7 +41,7 @@ router.post('/signup', (req, res) => {
     const { username, password } = req.headers;
     const admin = await Admin.findOne({ username, password });
     if (admin) {
-      const token = signToken({ username, role: 'admin' });
+      const token = jwt.sign({ username, role: 'admin' }, SECRET, { expiresIn: '1h' });
       res.json({ message: 'Logged in successfully', token });
     } else {
       res.status(403).json({ message: 'Invalid username or password' });
