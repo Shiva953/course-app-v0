@@ -6,6 +6,8 @@ import Register from './components/Register';
 import ShowCourses from './components/ShowCourses';
 import EditCourse from './components/EditCourse';
 import Appbar from './components/Appbar';
+
+//adding MUI
 function App() {
     return (
         <Router>
