@@ -1,12 +1,13 @@
 import {Typography} from "@mui/material";
 import Button from "@mui/material/Button";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {useNavigate} from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 function Appbar() {
     const navigate = useNavigate()
     const [userEmail, setUserEmail] = useState(null);
-
+    const role = useRef('');
     useEffect(() => {
         function callback2(data) {
             if (data.username) {
@@ -16,6 +17,8 @@ function Appbar() {
         function callback1(res) {
             res.json().then(callback2)
         }
+        const decoded = jwtDecode(localStorage.getItem("jwt-token"));
+        role.current = decoded.role;
         console.log("token - " + localStorage.getItem("jwt-token"));
         fetch("http://localhost:3000/admin/me", {
             method: "GET",
@@ -25,7 +28,7 @@ function Appbar() {
         }).then(callback1)
     }, []);
 
-    if (userEmail) {
+    if (userEmail && role==='admin') {
         return <div style={{
             display: "flex",
             justifyContent: "space-between",
