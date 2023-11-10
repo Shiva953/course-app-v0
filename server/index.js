@@ -1,10 +1,11 @@
 /* eslint-disable no-undef */
+require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const adminRouter = require("./routes/admin");
 const userRouter = require("./routes/user");
-
+const mongoURL = process.env.mongoURL
 const app = express();
 
 app.use(cors());
