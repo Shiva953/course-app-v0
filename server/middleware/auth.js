@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
+require('dotenv').config();
 const jwt = require('jsonwebtoken');
-const SECRET = 'adt4us9ej7f35srs6crt';  // This should be in an environment variable in a real application
+const SECRET = process.env.JWT_SECRET;  // This should be in an environment variable in a real application
 
 const authenticateJwt = (req, res, next) => {
   const authHeader = req.headers.authorization;
