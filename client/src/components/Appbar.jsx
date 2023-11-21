@@ -38,7 +38,7 @@ function Appbar() {
             zIndex: 1
         }}>
             <div style={{marginLeft: 10}}>
-                <Typography variant={"h6"}>NeutronsCourseVerse</Typography>
+                <Typography variant={"h6"} onClick={() => {navigate(`/`)}}>NeutronsCourseVerse</Typography>
             </div>
     
             <div style={{display: "flex"}}>
