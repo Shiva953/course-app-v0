@@ -6,13 +6,17 @@ import Register from './components/Register';
 import ShowCourses from './components/ShowCourses';
 import EditCourse from './components/EditCourse';
 import Appbar from './components/Appbar';
+import Entrypage from './components/Entrypage';
 
-//adding MUI
 function App() {
     return (
+        <div style={{width: "100vw",
+            height: "100vh",}}
+        >
         <Router>
             <Appbar />
             <Routes>
+                <Route path={"/"} element={<Entrypage />} />
                 <Route path={"/:person/"} element={<Landing />} />
                 <Route path={"/:person/login"} element={<Login />} />
                 <Route path={"/:person/register"} element={<Register />} />
@@ -21,6 +25,7 @@ function App() {
                 <Route path={"/admin/course/:courseId"} element={<EditCourse />} />
             </Routes>
         </Router>
+        </div>
     );
 }
 

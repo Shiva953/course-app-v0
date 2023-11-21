@@ -136,13 +136,17 @@ const EditCourse = () => {
           Editing Course {courseId}
         </Typography>
 
-        <form className="space-y-4">
+        <form className="space-y-4" style={{color: '#ffffff'}}>
           <TextField
             fullWidth
             label="Title"
             variant="outlined"
             type="text"
+            InputProps={{
+              style: { color: "#ffffff" },
+            }}
             value={course.title}
+            style={{color:"#ffffff"}}
             onChange={(e) => setCourse({ ...course, title: e.target.value })}
           />
 
@@ -151,6 +155,9 @@ const EditCourse = () => {
             label="Description"
             variant="outlined"
             type="text"
+            InputProps={{
+              style: { color: "#ffffff" },
+            }}
             value={course.description}
             onChange={(e) =>
               setCourse({ ...course, description: e.target.value })
@@ -162,6 +169,9 @@ const EditCourse = () => {
             label="Price"
             variant="outlined"
             type="number"
+            InputProps={{
+              style: { color: "#ffffff" },
+            }}
             value={course.price}
             onChange={(e) => setCourse({ ...course, price: e.target.value })}
           />
@@ -171,6 +181,9 @@ const EditCourse = () => {
             label="ImageLink"
             variant="outlined"
             type="link"
+            InputProps={{
+              style: { color: "#ffffff" },
+            }}
             value={course.imageLink}
             onChange={(e) =>
               setCourse({ ...course, imageLink: e.target.value })

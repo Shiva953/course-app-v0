@@ -17,9 +17,11 @@ function Appbar() {
         function callback1(res) {
             res.json().then(callback2)
         }
-        const decoded = jwtDecode(localStorage.getItem("jwt-token"));
+        let token = localStorage.getItem("jwt-token")
+        console.log(token)
+        const decoded = token!==null ? jwtDecode(token) : {role : ''}
         role.current = decoded.role;
-        console.log("token - " + localStorage.getItem("jwt-token"));
+        console.log("token - " + token);
         fetch("http://localhost:3000/admin/me", {
             method: "GET",
             headers: {
@@ -27,7 +29,7 @@ function Appbar() {
             }
         }).then(callback1)
     }, []);
-
+    // navigate(`/${role}`)
     if (userEmail && role==='admin') {
         return <div style={{
             display: "flex",
@@ -95,7 +97,7 @@ function Appbar() {
                         }}
                     >Signup As Admin</Button>
                 </div>
-                <div>
+                <div style={{marginRight: 10}}>
                     <Button
                         variant={"contained"}
                         onClick={() => {
