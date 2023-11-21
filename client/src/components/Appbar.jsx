@@ -47,7 +47,6 @@ function Appbar() {
                         cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
-                        fontFamily: 'Inter, sans-serif', 
                     }}>NeutronsCourseVerse</Button>
             </div>
     

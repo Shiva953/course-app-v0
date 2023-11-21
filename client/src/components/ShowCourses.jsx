@@ -506,7 +506,7 @@ function ShowCourses() {
 
   return (
     <Box className="bg-black p-8">
-      <Typography variant="h2" style={{fontWeight : 800, fontFamily : "Graphik, sans-serif"}} gutterBottom className="text-4xl font-bold text-white bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 mb-8 font-inter">
+      <Typography variant="h2" style={{fontWeight : 800}} gutterBottom className="text-4xl font-bold text-white bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 mb-8 font-inter">
         Your Courses
       </Typography>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
