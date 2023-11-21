@@ -38,7 +38,7 @@ function Appbar() {
             zIndex: 1
         }}>
             <div style={{marginLeft: 10}}>
-                <button onClick={() => {navigate(`/`)}} style={{
+                <Button onClick={() => {navigate(`/`)}} style={{
                         backgroundColor: '#3498db', // Replace with your preferred background color
                         color: '#ffffff', // Replace with your preferred text color
                         border: 'none',
@@ -48,19 +48,7 @@ function Appbar() {
                         display: 'flex',
                         alignItems: 'center',
                         fontFamily: 'Inter, sans-serif', // Use your preferred font
-                    }}
-                    >
-                    {/* <span
-                        style={{
-                        fontSize: '18px', // Adjust text size as needed
-                        fontWeight: 'bold',
-                        marginRight: '10px', // Adjust spacing between logo and text
-                        }}
-                    >
-                        NC
-                    </span> */}
-                        NeutronsCourseVerse
-                    </button>
+                    }}>NeutronsCourseVerse</Button>
             </div>
     
             <div style={{display: "flex"}}>
