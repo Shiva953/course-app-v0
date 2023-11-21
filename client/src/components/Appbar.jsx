@@ -39,15 +39,15 @@ function Appbar() {
         }}>
             <div style={{marginLeft: 10}}>
                 <Button onClick={() => {navigate(`/`)}} style={{
-                        backgroundColor: '#3498db', // Replace with your preferred background color
-                        color: '#ffffff', // Replace with your preferred text color
+                        backgroundColor: '#3498db', 
+                        color: '#ffffff', 
                         border: 'none',
                         padding: '10px 20px',
                         borderRadius: '5px',
                         cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
-                        fontFamily: 'Inter, sans-serif', // Use your preferred font
+                        fontFamily: 'Inter, sans-serif', 
                     }}>NeutronsCourseVerse</Button>
             </div>
     
