@@ -142,7 +142,7 @@ function Login() {
         try {
             console.log(email);
             console.log(password);
-            const response = await axios.post(`http://ncapp97341-backend.vercel.app/${person}/login`, {
+            const response = await axios.post(`https://ncapp97341-backend.vercel.app/${person}/login`, {
                 username: email,
                 password: password
             }, {

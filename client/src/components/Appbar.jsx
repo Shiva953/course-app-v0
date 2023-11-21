@@ -22,7 +22,7 @@ function Appbar() {
         const decoded = token!==null ? jwtDecode(token) : {role : ''}
         role.current = decoded.role;
         console.log("token - " + token);
-        fetch("http://ncapp97341-backend.vercel.app/admin/me", {
+        fetch("https://ncapp97341-backend.vercel.app/admin/me", {
             method: "GET",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("jwt-token")
