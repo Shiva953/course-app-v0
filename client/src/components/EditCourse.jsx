@@ -95,7 +95,7 @@ const EditCourse = () => {
   useEffect(() => {
     const getCourse = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/admin/courses`, {
+        const res = await axios.get(`http://ncapp97341-backend.vercel.app/admin/courses`, {
           headers: {
             Authorization: `Bearer ${jwt_token}`,
           },
@@ -113,7 +113,7 @@ const EditCourse = () => {
     try {
       course.published = true;
       const res = await axios.put(
-        `http://localhost:3000/admin/courses/${courseId}`,
+        `http://ncapp97341-backend.vercel.app/admin/courses/${courseId}`,
         course,
         {
           headers: {

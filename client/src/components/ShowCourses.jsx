@@ -363,7 +363,7 @@ function ShowCourses() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/admin/courses", {
+        const res = await axios.get("http://ncapp97341-backend.vercel.app/admin/courses", {
           headers: {
             Authorization: `Bearer ${jwt_token}`,
           },
@@ -371,7 +371,7 @@ function ShowCourses() {
         setCourses(res.data.courses);
 
         if (person === "user") {
-          const purchasedRes = await axios.get("http://localhost:3000/user/purchasedCourses", {
+          const purchasedRes = await axios.get("http://ncapp97341-backend.vercel.app/user/purchasedCourses", {
             headers: {
               Authorization: `Bearer ${jwt_token}`,
             },
@@ -391,7 +391,7 @@ function ShowCourses() {
   const purchaseCourse = async (id) => {
     try {
       const res = await axios.post(
-        `http://localhost:3000/user/courses/${id}`,
+        `http://ncapp97341-backend.vercel.app/user/courses/${id}`,
         null,
         {
           headers: {

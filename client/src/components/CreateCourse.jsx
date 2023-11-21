@@ -67,7 +67,7 @@ function CreateCourse() {
     try {
       course.published = true;
       const res = await axios.post(
-        "http://localhost:3000/admin/courses",
+        "http://ncapp97341-backend.vercel.app/admin/courses",
         course,
         {
           headers: {

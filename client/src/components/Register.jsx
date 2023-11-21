@@ -48,7 +48,7 @@ function Register() {
     e.preventDefault(); // Prevent the default form submission behavior
 
     try {
-      const res = await axios.post(`http://localhost:3000/${person}/signup`, {
+      const res = await axios.post(`http://ncapp97341-backend.vercel.app/${person}/signup`, {
         username: email,
         password: password,
       });
