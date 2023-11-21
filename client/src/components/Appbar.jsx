@@ -47,7 +47,7 @@ function Appbar() {
                         cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
-                        fontFamily: 'Arial, sans-serif', // Use your preferred font
+                        fontFamily: 'Inter, sans-serif', // Use your preferred font
                     }}
                     >
                     {/* <span
@@ -59,14 +59,7 @@ function Appbar() {
                     >
                         NC
                     </span> */}
-                    <span
-                        style={{
-                        fontSize: '16px', // Adjust text size as needed
-                        fontWeight: 'bold',
-                        }}
-                    >
                         NeutronsCourseVerse
-                    </span>
                     </button>
             </div>
     
