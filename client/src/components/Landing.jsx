@@ -100,7 +100,7 @@ function Landing() {
 
   const handleLogOut = () => {
     localStorage.removeItem("jwt-token");
-    window.location.reload();
+    window.location = '/'
   };
 
   return (
