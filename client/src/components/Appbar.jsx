@@ -38,7 +38,36 @@ function Appbar() {
             zIndex: 1
         }}>
             <div style={{marginLeft: 10}}>
-                <Typography variant={"h6"} onClick={() => {navigate(`/`)}}>NeutronsCourseVerse</Typography>
+                <button onClick={() => {navigate(`/`)}} style={{
+                        backgroundColor: '#3498db', // Replace with your preferred background color
+                        color: '#ffffff', // Replace with your preferred text color
+                        border: 'none',
+                        padding: '10px 20px',
+                        borderRadius: '5px',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        fontFamily: 'Arial, sans-serif', // Use your preferred font
+                    }}
+                    >
+                    {/* <span
+                        style={{
+                        fontSize: '18px', // Adjust text size as needed
+                        fontWeight: 'bold',
+                        marginRight: '10px', // Adjust spacing between logo and text
+                        }}
+                    >
+                        NC
+                    </span> */}
+                    <span
+                        style={{
+                        fontSize: '16px', // Adjust text size as needed
+                        fontWeight: 'bold',
+                        }}
+                    >
+                        NeutronsCourseVerse
+                    </span>
+                    </button>
             </div>
     
             <div style={{display: "flex"}}>
